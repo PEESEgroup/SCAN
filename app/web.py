@@ -36,7 +36,7 @@ if page == "Introduction":
     This platform allows you to query our non-aqueous electrolyte database and predict properties using our deep learning models.
     It accelerates the discovery of non-aqueous electrolyte for battery and energy storage applications.
     """)
-    st.image("web_1.png")
+    st.image("/mount/src/scan/app/web_1.png")
     st.subheader("Core functions: ")
     st.write("1. The detailed information for over 10 million non-aqueous electrolytes is provided. One can search the non-aqueous electrolyte using the inforamtion of Li-salts, solvents, and conditions.")
     st.write("2. An online predictive platform is provided. One can predict ionic conductivity for non-aqueous electrolyte by setting custom inputs.")
