@@ -9,14 +9,14 @@ import numpy as np
 
 @st.cache_data
 def load_data():
-    df1 = pd.read_parquet('data_part_1.parquet')
-    df2 = pd.read_parquet('data_part_2.parquet')
-    df3 = pd.read_parquet('data_part_3.parquet')
+    df1 = pd.read_parquet('/mount/src/scan/app/data_part_1.parquet')
+    df2 = pd.read_parquet('/mount/src/scan/app/data_part_2.parquet')
+    df3 = pd.read_parquet('/mount/src/scan/app/data_part_3.parquet')
     df = pd.concat([df1, df2, df3], ignore_index=True)
     return df
 
 
-def load_model(model, path="1_model.pth"):
+def load_model(model, path="/mount/src/scan/app/1_model.pth"):
     model.load_state_dict(torch.load(path, map_location=torch.device('cpu')))
     model.eval()
     return model
