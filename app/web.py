@@ -244,7 +244,7 @@ elif page == "Model Prediction":
     condition_features = []
 
 
-    model = load_model(create_model(), path="1-model.pth")
+    model = load_model(create_model(), path="/mount/src/scan/app/1-model.pth")
     st.title("Model Prediction")
     st.write("""
                 Here, we provide an online function to predict conductivity for non-aqueous electrolytes.
