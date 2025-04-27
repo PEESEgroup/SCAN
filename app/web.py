@@ -9,7 +9,11 @@ import numpy as np
 
 @st.cache_data
 def load_data():
-    return pd.read_csv('prediction.csv')
+    df1 = pd.read_parquet('data_part_1.parquet')
+    df2 = pd.read_parquet('data_part_2.parquet')
+    df3 = pd.read_parquet('data_part_3.parquet')
+    df = pd.concat([df1, df2, df3], ignore_index=True)
+    return df
 
 
 def load_model(model, path="1-model.pth"):
