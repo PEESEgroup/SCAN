@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import time
 import torch
-from .route_model import create_model
+from route_model import create_model
 import numpy as np
 
 
