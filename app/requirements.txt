@@ -1,13 +1,3 @@
 pip>=25.1
 streamlit
-dgl
-rdkit
-scikit-learn
-scipy
-shap
 torch
-torch-geometri
-torchaudio
-torchdata
-torchmetrics
-torchvision
