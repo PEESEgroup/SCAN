@@ -106,11 +106,14 @@ elif page == "Database Query":
 
     st.write(
         "Note: since we have over 10 million entries, the data loading process may be a little slow, please be patient.")
-    data = load_data()
+    
     if st.button("**Submit**"):
+        data = load_data()
         filtered_data = data[(data['Li-salt'] == Li_salt) &
-                             (data[solvent_1] == solvent_1_ratio) &
-                             (data[solvent_2] == solvent_2_ratio) &
+                             (data['solvent_1'] == solvent_1) &
+                             (data['solvent_2'] == solvent_2) &
+                             (data['ratio_1'] == solvent_1_ratio) &
+                             (data['ratio_2'] == solvent_2_ratio) &
                              (data['T'] == temperature) &
                              (data['concentration'] == concentration) &
                              (data['concentration-unit'] == unit) &
