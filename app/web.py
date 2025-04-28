@@ -9,11 +9,12 @@ import numpy as np
 
 @st.cache_data
 def load_data():
-    df1 = pd.read_parquet('/mount/src/scan/app/data_part_1.parquet')
+    #df1 = pd.read_parquet('/mount/src/scan/app/data_part_1.parquet')
     #df2 = pd.read_parquet('/mount/src/scan/app/data_part_2.parquet')
     #df3 = pd.read_parquet('/mount/src/scan/app/data_part_3.parquet')
     #df = pd.concat([df1, df2, df3], ignore_index=True)
-    return df1
+    df = pd.read_csv('/mount/src/scan/app/All-candidate.csv')
+    return df
 
 
 def load_model(model, path="/mount/src/scan/app/1_model.pth"):
