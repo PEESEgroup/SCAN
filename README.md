@@ -35,17 +35,17 @@ We provide the practical tools in `utils` directory for calculating the ionic co
 * Molecular property calculation
 If you want to re-calcualte or re-design the molecular properties, just provide the `SMILES` for a given molecule, and run:
 
-    python molecular_property.py
-
+        python molecular_property.py
+  
 * Simulation box construction
 This tool is useful to calculate the number of molecules for Li-salts and two solvents in the simulation box, according to parameters: `box_size`, `density`, `salt_concentration`, `salt_molar_mass`, `solvent1_molar_mass`,` solvent2_molar_mass`, `solvent_mass_ratio`, by running:
 
-    python box_construction.py
+        python box_construction.py
 
 * Conductivity calculation
 After obtaining the diffusion coefficent from the MD simultions, you can use this tool to calculate the ionic conductivity based on Arrhenius equation:
 
-    python conductivity_calculation.py
+        python conductivity_calculation.py
 
 
 ## Data
