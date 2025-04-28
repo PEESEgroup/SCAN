@@ -1,3 +1,4 @@
 pip>=25.1
 streamlit
 torch==2.2.1
+numpy==1.26.4
