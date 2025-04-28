@@ -4,6 +4,7 @@ This software package implements the SCAN (Shaping Conductivity Atlas for Non-aq
 The package provides two major functions:
 * Calculate the descriptors based on Li-salts, solvents, and conditions.
 * Train a SCAN model with the entire data
+![web-1](https://github.com/user-attachments/assets/fce81555-1663-422a-81d3-bdf4ca1915da)
 
 ## Prerequisites
 * Pytorch
