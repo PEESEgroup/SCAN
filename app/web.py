@@ -9,11 +9,10 @@ import numpy as np
 
 @st.cache_data
 def load_data():
-    #df1 = pd.read_parquet('/mount/src/scan/app/data_part_1.parquet')
-    #df2 = pd.read_parquet('/mount/src/scan/app/data_part_2.parquet')
-    #df3 = pd.read_parquet('/mount/src/scan/app/data_part_3.parquet')
-    #df = pd.concat([df1, df2, df3], ignore_index=True)
-    df = pd.read_csv('/mount/src/scan/app/All-candidate.csv')
+    df1 = pd.read_parquet('/mount/src/scan/app/data_part_1.parquet')
+    df2 = pd.read_parquet('/mount/src/scan/app/data_part_2.parquet')
+    df3 = pd.read_parquet('/mount/src/scan/app/data_part_3.parquet')
+    df = pd.concat([df1, df2, df3], ignore_index=True)
     return df
 
 
@@ -107,8 +106,8 @@ elif page == "Database Query":
 
     st.write(
         "Note: since we have over 10 million entries, the data loading process may be a little slow, please be patient.")
+    data = load_data()
     if st.button("**Submit**"):
-        data = load_data()
         filtered_data = data[(data['Li-salt'] == Li_salt) &
                              (data[solvent_1] == solvent_1_ratio) &
                              (data[solvent_2] == solvent_2_ratio) &
