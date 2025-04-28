@@ -304,6 +304,6 @@ elif page == "Model Prediction":
         with st.spinner("Loading the model, wait a moment..."):
             time.sleep(1)
             st.balloons()
-        st.write(f"**Successful! the ionic conductivity at {temperature*100} K is predicted to be {predictions.item()} mS/cm. Thanks!**")
+        st.write(f"**Successfully! the ionic conductivity at {temperature*100} K is predicted to be {predictions.item()} mS/cm. Thanks!**")
 
 
