@@ -8,12 +8,15 @@ import numpy as np
 
 
 @st.cache_data
-def load_data():
-    df1 = pd.read_parquet('/mount/src/scan/app/data_part_1.parquet')
-    #df2 = pd.read_parquet('/mount/src/scan/app/data_part_2.parquet')
-    #df3 = pd.read_parquet('/mount/src/scan/app/data_part_3.parquet')
+def load_data(flag):
+    if flag == 0.0:
+        df = pd.read_parquet('/mount/src/scan/app/data_part_1.parquet')
+    if flag == 1.0:
+        df = pd.read_parquet('/mount/src/scan/app/data_part_2.parquet')
+    if flag == 2.0:
+        df = pd.read_parquet('/mount/src/scan/app/data_part_3.parquet')
     #df = pd.concat([df1, df2, df3], ignore_index=True)
-    return df1
+    return df
 
 
 def load_model(model, path="/mount/src/scan/app/1_model.pth"):
@@ -105,10 +108,16 @@ elif page == "Database Query":
     temperature = st.slider("Temperature (from 200 K to 320 K, unit: 100 K): ", 2.0, 3.2, 3.0, step=0.2)
 
     st.write(
-        "Note: since we have over 10 million entries, the data loading process may be a little slow, please be patient.")
+        "Note: since we have over 10 million entries, the data loading process may be a little slow, we split the database into three sub-databases:")
     
+    database = st.radio("Please choose one of the database to access.",("Database I", "Database II", "Database III"))
     if st.button("**Submit**"):
-        data = load_data()
+        if database == "Database I":
+            data = load_data(flag=0.0)
+        elif database == "Database II":
+            data = load_data(flag=1.0)
+        elif database == "Database III":
+            data = load_data(flag=2.0)
         filtered_data = data[(data['Li-salt'] == Li_salt) &
                              (data['solvent_1'] == solvent_1) &
                              (data['solvent_2'] == solvent_2) &
