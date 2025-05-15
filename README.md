@@ -29,6 +29,17 @@ After you finished using `SCAN`, exit the environment by:
 
     source deactivate
 
+## Models
+We provide the model files in `model` and  `sampling` directories.
+* `sampling`: the original multi-feature network (MFNet) is provided, which is one of the baseline model. Additionally, three strategies (over-sampling, under-sampling, hybrid-sampling) with various hyper-parameters were adopted for training baseline models. To run these models:
+
+        python over_sampling_train.py
+        python under_sampling_train.py
+        python over_under_sampling_train.py
+
+* `model`: MFNet with dynamic routing strategy was implemented for predicting the conductivity, to run the model:
+        python train.py
+
 ## Tools
 We provide the practical tools in `utils` directory for calculating the ionic conductivity, constructing simulation box, and calculating molecular properties.
 
