@@ -7,10 +7,10 @@ The package provides two major functions:
 ![web-1](https://github.com/user-attachments/assets/fce81555-1663-422a-81d3-bdf4ca1915da)
 
 ## Prerequisites
-* Pytorch
-* rdkit
-* scikit-learn
-* pysr
+* torch==2.2.1
+* rdkit==2024.3.6
+* scikit-learn==1.5.1
+* pysr==1.5.2
 
 The easiest way of installing the prerequisites is via `conda`. After installing `conda`, run the following command to create a new environment named `scan` and install all prerequisites:
 
@@ -21,7 +21,7 @@ This creates a `conda` environment for running `SCAN`. Before using `SCAN`, acti
     
     source activate scan
 
-Then, in directory `model`, you can test if all the prerequisites are installed properly by running:
+Alternatively, `environment.yaml` provides the dependencies for creating running environment. Then, in directory `model`, you can test if all the prerequisites are installed properly by running:
 
     python train.py
 
@@ -50,9 +50,19 @@ After obtaining the diffusion coefficent from the MD simultions, you can use thi
 
 ## Data
 To reproduce our paper, you can download the corresponding datasets in `data` directory.
+* `calisol`: lists the compiled data, including k values, temperature, concentration/unti, salt, solvent. The temperature was scaled by a factor of 100.
+* `salt_feature.npy`: feature matrix of salt molecules based on the designed descriptor.
+* `solvent_feature.npy`: feature matrix of solvent molecules based on the designed descriptor.
+* `condition_feature.npy`: feature matrix of conditions.
+* `conductivity_target.txt`: collected k values.
 
 ## Authors
 This software was primarily written by `Dr. Zhilong Wang` who was advised by `Prof. Fengqi You`.
+
+## Web app
+A online platform was estabilished that allows researchers to query our non-aqueous electrolyte database and predict conductivity properties using our deep learning models. It accelerates the discovery of non-aqueous electrolyte for battery and energy storage applications.
+
+        https://peese-scan.streamlit.app/
 
 ## How to cite
 Please cite the following work if you want to use SCAN:
