@@ -56,8 +56,8 @@ To reproduce our paper, you can download the corresponding datasets in `data` di
 * `condition_feature.npy`: feature matrix of conditions.
 * `conductivity_target.txt`: collected k values.
 
-## Authors
-This software was primarily written by `Dr. Zhilong Wang` who was advised by `Prof. Fengqi You`.
+## Author contributions
+This software was primarily written by `Dr. Zhilong Wang` who is advised by `Prof. Fengqi You`.
 
 ## Web app
 A online platform was estabilished that allows researchers to query our non-aqueous electrolyte database and predict conductivity properties using our deep learning models. It accelerates the discovery of non-aqueous electrolyte for battery and energy storage applications.
