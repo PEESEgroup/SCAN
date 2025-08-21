@@ -12,7 +12,7 @@ important_3 = feature_3[:,[0, 5]] # T and c
 
 X_selected = np.hstack((important_1, important_2, important_3)) # input feature vector
 
-model = PySRRegressor.from_file(run_directory="/home/zlwang/project/salt/model/A-model/symbolic/outputs/2")
+model = PySRRegressor.from_file(run_directory="../../trained_pth_models/checkpoint_binary.pkl")
 
 i = 29 # 30th symbolic equation
 prediction = model.predict(X_selected, index=i)
