@@ -1,9 +1,10 @@
 # AI for Non-aqueous Electrolyte Design
 This software package implements the SCAN (Shaping Conductivity Atlas for Non-aqueous electrolytes) that takes Li-salts, solvents, and conditions to predict the ionic conductivity.
 
-The package provides two major functions:
+The package provides three major functions:
 * Calculate the descriptors based on Li-salts, solvents, and conditions.
-* Train a SCAN model with the entire data
+* Train a SCAN model with the entire data.
+* Predict conductivity based on SCAN model or symbolic regression model.
 ![web-1](https://github.com/user-attachments/assets/fce81555-1663-422a-81d3-bdf4ca1915da)
 
 ## Prerequisites
@@ -38,12 +39,21 @@ We provide the model files in `model` and  `sampling` directories.
         python over_under_sampling_train.py
 
 * `model`: MFNet with dynamic routing strategy was implemented for predicting the conductivity, to run the model:
+
         python train.py
+
+* `trained_pth_model`: trained model weights of MFNet models and symbolic regression models
+
+        MFNet_fold_i_model.pth # well-trained NFNet models using five-fold cross validations
+        checkpoint_unary.pkl # symbolic regression model, with unary and binary operations
+        checkpoint_binary.pkl # symbolic regression model, with only binary operations
+
 
 ## Scripts
 We provide the practical scripts in `examples` to predict the ionic conductivity based on well-trained models or symbolic regression models, and in `utils` directory for calculating the ionic conductivity, constructing simulation box, and calculating molecular properties.
 
-* Ionic conductivity prediction
+* **Ionic conductivity prediction**
+
 You can predict ionic conductivity based on MFNet models, by running:
 
         python predict.py
@@ -51,17 +61,20 @@ If you want to predict ionic conductivity based on symbolic regression models, r
         
         python symbolic_regression.py
 
-* Molecular property calculation
+* **Molecular property calculation**
+
 If you want to re-calcualte or re-design the molecular properties, just provide the `SMILES` for a given molecule, and run:
 
         python molecular_property.py
   
-* Simulation box construction
+* **Simulation box construction**
+
 This tool is useful to calculate the number of molecules for Li-salts and two solvents in the simulation box, according to parameters: `box_size`, `density`, `salt_concentration`, `salt_molar_mass`, `solvent1_molar_mass`,` solvent2_molar_mass`, `solvent_mass_ratio`, by running:
 
         python box_construction.py
 
-* Conductivity calculation
+* **Conductivity calculation**
+
 After obtaining the diffusion coefficent from the MD simultions, you can use this tool to calculate the ionic conductivity based on Arrhenius equation:
 
         python conductivity_calculation.py
