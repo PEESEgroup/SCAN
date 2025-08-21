@@ -15,11 +15,11 @@ def predict(model, x1, x2, x3):
         outputs = model(x1, x2, x3)
     return outputs
 
-model = load_model(create_model(), path="new-result/1-model.pth")
+model = load_model(create_model(), path="trained_pth_model/MFNet_fold_1-model.pth")
 
-x_1 = torch.from_numpy(np.load("salt_features.npy")).float() # 14
-x_2 = torch.from_numpy(np.load("solvent_features.npy")).float() # 14
-x_3 = torch.from_numpy(np.load("condition_features.npy")).float() # 6
+x_1 = torch.from_numpy(np.load("data/salt_features.npy")).float() # 14
+x_2 = torch.from_numpy(np.load("data/solvent_features.npy")).float() # 14
+x_3 = torch.from_numpy(np.load("data/condition_features.npy")).float() # 6
 
 
 predictions = predict(model, x_1, x_2, x_3)
