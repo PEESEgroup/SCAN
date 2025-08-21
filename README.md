@@ -40,8 +40,16 @@ We provide the model files in `model` and  `sampling` directories.
 * `model`: MFNet with dynamic routing strategy was implemented for predicting the conductivity, to run the model:
         python train.py
 
-## Tools
-We provide the practical tools in `utils` directory for calculating the ionic conductivity, constructing simulation box, and calculating molecular properties.
+## Scripts
+We provide the practical scripts in `examples` to predict the ionic conductivity based on well-trained models or symbolic regression models, and in `utils` directory for calculating the ionic conductivity, constructing simulation box, and calculating molecular properties.
+
+* Ionic conductivity prediction
+You can predict ionic conductivity based on MFNet models, by running:
+
+        python predict.py
+If you want to predict ionic conductivity based on symbolic regression models, run:
+        
+        python symbolic_regression.py
 
 * Molecular property calculation
 If you want to re-calcualte or re-design the molecular properties, just provide the `SMILES` for a given molecule, and run:
