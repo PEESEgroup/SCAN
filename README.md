@@ -104,7 +104,7 @@ https://github.com/user-attachments/assets/21823485-5af6-4877-bcac-aabc342348c5
 ## How to cite
 Please cite the following work if you want to use SCAN:
 
-    Zhilong Wang, Fengqi You*. Submitted (2025).
+    Zhilong Wang, Fengqi You*. Nature Computational Science Accepted in principle (2025).
 
 
 
