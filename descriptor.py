@@ -95,7 +95,6 @@ if __name__ == "__main__":
             else:
                 # print(solvent)
                 solvent_vector = [solvent_vector[j] + [i*proportion for i in solvent_properties[solvent]][j] for j in range(14)]
-        # print(solvent_vector)
         solvent_features.append(solvent_vector)
 
         condition_vector = []
@@ -112,14 +111,13 @@ if __name__ == "__main__":
     condition_features = np.array(condition_features)
     conductivity_target = np.array(conductivity_target)
 
-    # print(salt_features.shape, solvent_features.shape, condition_features.shape)
-
     np.save("salt_features.npy", salt_features)
     np.save("solvent_features.npy", solvent_features)
     np.save("condition_features.npy", condition_features)
 
     np.savetxt("conductivity_target.txt", conductivity_target)
     
+
 
 
 
