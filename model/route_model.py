@@ -82,7 +82,6 @@ class MultiModalNet(nn.Module):
         return final_output
 
 
-# Define loss and optimizer
 def create_optimizer(model):
     return optim.Adam(model.parameters(), lr=0.002)
 
