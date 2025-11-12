@@ -5,11 +5,11 @@ from torch.utils.data import DataLoader, TensorDataset, random_split
 
 
 def load_data():
-    feature_1 = torch.from_numpy(np.load("data/salt_features.npy")).float() # 14
-    feature_2 = torch.from_numpy(np.load("data/solvent_features.npy")).float() # 14
-    feature_3 = torch.from_numpy(np.load("data/condition_features.npy")).float() # 5
-    target = torch.from_numpy(np.loadtxt("data/conductivity_target.txt")).float().unsqueeze(1)  # target
-    batch_size = 320
+    feature_1 = torch.from_numpy(np.load("data/salt_features.npy")).float()
+    feature_2 = torch.from_numpy(np.load("data/solvent_features.npy")).float()
+    feature_3 = torch.from_numpy(np.load("data/condition_features.npy")).float()
+    target = torch.from_numpy(np.loadtxt("data/conductivity_target.txt")).float().unsqueeze(1)
+    batch_size = 256
 
 
     # Create dataset
@@ -25,3 +25,4 @@ def load_data():
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
     return train_loader, val_loader
+
