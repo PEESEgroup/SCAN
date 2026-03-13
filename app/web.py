@@ -54,7 +54,7 @@ if page == "Introduction":
     st.write("5. This work also provides chemical insight into how molecular flexibility and ion-solvent interactions influence conductivity by incorporating the gradient-decoupling approach, symbolic regression, and quantum chemistry calculation.")
 
     st.subheader("Main developers: ")
-    st.write("Professor Fengqi You (you.fengqi@gmail.com), Dr. Zhilong Wang (zhilongwang.ai@gmail.com)")
+    st.write("Professor Fengqi You, Dr. Zhilong Wang (zhilongwang.ai@gmail.com)")
     st.write("Please let us know if you have any questions!")
 
     st.subheader("Copyright: ")
@@ -65,7 +65,7 @@ if page == "Introduction":
         """This project is partially supported by the Eric and Wendy Schmidt AI in Science Postdoctoral Fellowship, a program of Schmidt Sciences, LLC.""")
 
     st.subheader("Citing: ")
-    st.write("""Zhilong Wang, Fengqi You*, submitted (2025).""")
+    st.write("""Zhilong Wang, Fengqi You*, A dynamic routing-guided interpretable framework for salt–solvent chemistry. Nat Comput Sci (2026). https://doi.org/10.1038/s43588-026-00955-5""")
 
 
 ################
